@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badan Pengelola Jurnal - FAST Universitas Brawijaya</title>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5.3.3 CSS & Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        :root {
+            --ub-navy: #003366;
+            --ub-navy-dark: #002244;
+            --ub-gold: #f59e0b;
+            --bg-light: #f4f7fa;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: #1e293b;
+        }
+
+        /* Navbar Styling */
+        .navbar-ub {
+            background: linear-gradient(135deg, var(--ub-navy) 0%, var(--ub-navy-dark) 100%);
+            box-shadow: 0 4px 20px rgba(0, 51, 102, 0.15);
+        }
+
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            transform: scale(1.15);
+            transform-origin: left center;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--ub-gold) !important;
+        }
+
+        /* Carousel Styling */
+        .carousel-item {
+            position: relative;
+        }
+
+        .carousel-item img {
+            height: 440px;
+            object-fit: cover;
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 25, 51, 0.85) 0%, rgba(0, 25, 51, 0.2) 60%, rgba(0, 0, 0, 0.1) 100%);
+        }
+
+        .carousel-caption {
+            bottom: 2rem;
+            text-align: left;
+            left: 5%;
+            right: 5%;
+        }
+
+        /* Section Title */
+        .section-title {
+            color: var(--ub-navy);
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--ub-gold);
+            border-radius: 2px;
+        }
+
+        /* Journal Cards */
+        .journal-card {
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #ffffff;
+        }
+
+        .journal-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0, 51, 102, 0.12) !important;
+        }
+
+        .journal-card img {
+            height: 190px;
+            object-fit: cover;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .btn-ub {
+            background-color: var(--ub-navy);
+            color: #ffffff;
+            border: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-ub:hover {
+            background-color: var(--ub-navy-dark);
+            color: var(--ub-gold);
+        }
+
+        /* Info & Map Cards */
+        .info-card {
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+        }
+
+        .staff-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .staff-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .staff-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background-color: rgba(0, 51, 102, 0.08);
+            color: var(--ub-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        .footer-ub {
+            background-color: var(--ub-navy);
+            color: #e2e8f0;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-item img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-ub py-2">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="https://ternaktropika.ub.ac.id/public/site/images/viky/desain-tanpa-judul-2.png" alt="Logo Universitas Brawijaya" class="d-inline-block me-2">
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarUtama" aria-controls="navbarUtama" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarUtama">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profil.html">Profil BPJ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Daftar Jurnal
+                            </a>
+                            <ul class="dropdown-menu shadow border-0 rounded-3">
+                                <li><a class="dropdown-item py-2" href="https://jitek.ub.ac.id/index.php/jitek/index" target="_blank">Jurnal Ilmu dan Teknologi Hasil Ternak (JITEK)</a></li>
+                                <li><a class="dropdown-item py-2" href="https://jiip.ub.ac.id/index.php/jiip" target="_blank">Jurnal Ilmu-Ilmu Peternakan (JIIP)</a></li>
+                                <li><a class="dropdown-item py-2" href="https://jnt.ub.ac.id/index.php/jnt" target="_blank">Jurnal Nutrisi Ternak Tropis (JNTT)</a></li>
+                                <li><a class="dropdown-item py-2" href="https://ternaktropika.ub.ac.id/index.php/tropika" target="_blank">Jurnal TERNAK TROPIKA</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="jurnal-index.html">Jurnal Index</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="helpdesk.html">Helpdesk</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search" onsubmit="cariJurnalHome(event)">
+                        <div class="input-group">
+                            <input class="form-control border-0" id="inputCariHome" type="search" placeholder="Cari jurnal atau bidang..." aria-label="Search" onkeyup="cariJurnalHome(event)">
+                            <button class="btn btn-warning fw-semibold px-3" type="submit">
+                                <i class="bi bi-search me-1"></i> Cari
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-4">
+
+        <!-- SECTION SLIDER / CAROUSEL -->
+        <section id="slider">
+            <div id="carouselJurnal" class="carousel slide shadow-sm rounded-4 overflow-hidden" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselJurnal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselJurnal" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselJurnal" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://jitek.ub.ac.id/public/site/images/jitek/whatsapp-image-2026-09-24-at-10.38.59-am-be25f7d601d6268ce97ade629a4bb7b8.jpg" class="d-block w-100" alt="Peternakan Tropis">
+                        <div class="carousel-overlay"></div>
+                        <div class="carousel-caption">
+                            <span class="badge bg-warning text-dark mb-2 px-3 py-1 fw-semibold">Portal Resmi Publikasi</span>
+                            <h2 class="fw-bold mb-1">Badan Pengelola Jurnal FAST Universitas Brawijaya</h2>
+                            <p class="mb-0 text-light opacity-90">Pusat penerbitan jurnal ilmiah bidang sains dan teknologi peternakan.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://jitek.ub.ac.id/public/site/images/jitek/image-1-1.png" class="d-block w-100" alt="Laboratorium Teknologi Hasil Ternak">
+                        <div class="carousel-overlay"></div>
+                        <div class="carousel-caption">
+                            <span class="badge bg-warning text-dark mb-2 px-3 py-1 fw-semibold">Call for Papers</span>
+                            <h2 class="fw-bold mb-1">Penerimaan Naskah Edisi Terbaru</h2>
+                            <p class="mb-0 text-light opacity-90">Terbuka bagi dosen, peneliti, dan mahasiswa untuk publikasi hasil riset peternakan bereputasi nasional maupun internasional.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://jitek.ub.ac.id/public/site/images/jitek/1000407017-9952f13e982dd668a32e935611785d2d-20-8-2026-07.56.15-1.png" class="d-block w-100" alt="Nutrisi Ternak">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselJurnal" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Sebelumnya</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselJurnal" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Berikutnya</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- SECTION GALERI 4 JURNAL -->
+        <section id="galeri" class="mt-5 pt-2">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+                <div>
+                    <h3 class="section-title mb-1">Jurnal Ilmiah di Bawah Naungan BPJ FAST UB</h3>
+                    <p class="text-muted mb-0 mt-2">Pilih jurnal sesuai ruang lingkup penelitian Anda untuk pengiriman naskah atau memeriksa status indeksasi.</p>
+                </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" id="daftarKartuJurnal">
+                <!-- Card 1 -->
+                <div class="col kartu-jurnal-item">
+                    <div class="card h-100 shadow-sm journal-card">
+                        <img src="https://ternaktropika.ub.ac.id/public/site/images/ttropika/4.png" class="card-img-top" alt="Teknologi Hasil Ternak">
+                        <div class="card-body">
+                            <span class="badge bg-primary-subtle text-primary mb-2">JITEK</span>
+                            <h5 class="card-title fw-bold" style="color: var(--ub-navy);">Jurnal Ilmu dan Teknologi Hasil Ternak</h5>
+                            <p class="card-text text-muted small">Memuat hasil penelitian pengolahan susu, daging, telur, kulit, serta mikrobiologi dan bioteknologi hasil ternak.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-3 pt-0 d-grid gap-2">
+                            <a href="https://jitek.ub.ac.id/index.php/jitek/index" target="_blank" class="btn btn-ub btn-sm py-2">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Kunjungi Website OJS
+                            </a>
+                            <a href="jurnal-index.html#jitek" class="btn btn-outline-secondary btn-sm py-2">Lihat Jurnal Index</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col kartu-jurnal-item">
+                    <div class="card h-100 shadow-sm journal-card">
+                        <img src="https://ternaktropika.ub.ac.id/public/site/images/ttropika/5.png" class="card-img-top" alt="Ilmu-Ilmu Peternakan">
+                        <div class="card-body">
+                            <span class="badge bg-primary-subtle text-primary mb-2">JIIP</span>
+                            <h5 class="card-title fw-bold" style="color: var(--ub-navy);">Jurnal Ilmu-Ilmu Peternakan</h5>
+                            <p class="card-text text-muted small">Fokus pada bidang produksi ternak, pemuliaan dan genetika, reproduksi, serta sosial ekonomi pembangunan peternakan.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-3 pt-0 d-grid gap-2">
+                            <a href="https://jiip.ub.ac.id/index.php/jiip" target="_blank" class="btn btn-ub btn-sm py-2">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Kunjungi Website OJS
+                            </a>
+                            <a href="jurnal-index.html#jiip" class="btn btn-outline-secondary btn-sm py-2">Lihat Jurnal Index</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col kartu-jurnal-item">
+                    <div class="card h-100 shadow-sm journal-card">
+                        <img src="https://ternaktropika.ub.ac.id/public/site/images/ttropika/3.png" class="card-img-top" alt="Nutrisi Ternak Tropis">
+                        <div class="card-body">
+                            <span class="badge bg-primary-subtle text-primary mb-2">JNTT</span>
+                            <h5 class="card-title fw-bold" style="color: var(--ub-navy);">Jurnal Nutrisi Ternak Tropis</h5>
+                            <p class="card-text text-muted small">Mengkaji ilmu bahan pakan lokal, formulasi ransum, teknologi pengolahan pakan, dan nutrisi ruminansia maupun unggas.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-3 pt-0 d-grid gap-2">
+                            <a href="https://jnt.ub.ac.id/index.php/jnt" target="_blank" class="btn btn-ub btn-sm py-2">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Kunjungi Website OJS
+                            </a>
+                            <a href="jurnal-index.html#jntt" class="btn btn-outline-secondary btn-sm py-2">Lihat Jurnal Index</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col kartu-jurnal-item">
+                    <div class="card h-100 shadow-sm journal-card">
+                        <img src="https://ternaktropika.ub.ac.id/public/site/images/ttropika/2.png" class="card-img-top" alt="Ternak Tropika">
+                        <div class="card-body">
+                            <span class="badge bg-primary-subtle text-primary mb-2">TERNAK TROPIKA</span>
+                            <h5 class="card-title fw-bold" style="color: var(--ub-navy);">Jurnal TERNAK TROPIKA</h5>
+                            <p class="card-text text-muted small">Publikasi ilmiah mengenai sistem budidaya peternakan tropis berkelanjutan, manajemen kesehatan, dan lingkungan ternak.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-3 pt-0 d-grid gap-2">
+                            <a href="https://ternaktropika.ub.ac.id/index.php/tropika" target="_blank" class="btn btn-ub btn-sm py-2">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Kunjungi Website OJS
+                            </a>
+                            <a href="jurnal-index.html#ternak-tropika" class="btn btn-outline-secondary btn-sm py-2">Lihat Jurnal Index</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION LAYANAN & INFORMASI -->
+        <section id="lokasi" class="mt-5 pt-2">
+            <div class="row g-4">
+                <!-- Kolom Peta Lokasi -->
+                <div class="col-lg-6">
+                    <div class="card h-100 info-card p-2">
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title fw-bold mb-2" style="color: var(--ub-navy);">
+                                <i class="bi bi-geo-alt-fill text-warning me-2"></i>Lokasi Kampus
+                            </h4>
+                            <p class="card-text text-muted mb-3">Jl. Veteran, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145</p>
+                            <div class="ratio ratio-16x9 rounded-3 overflow-hidden mt-auto border">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d987.8638069540698!2d112.60995246469979!3d-7.951818839295343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e788276d2af04ff%3A0x436c47248e366176!2sFakultas%20Sains%20dan%20Teknologi%20Peternakan%20Universitas%20Brawijaya!5e0!3m2!1sid!2sid!4v1794828924476!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Sekretariat & Struktur Pengelola -->
+                <div class="col-lg-6">
+                    <div class="card h-100 info-card p-2">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold mb-2" style="color: var(--ub-navy);">
+                                <i class="bi bi-building text-warning me-2"></i>Sekretariat BPJ FAST UB
+                            </h4>
+                            <p class="card-text text-muted">Gedung Fakultas Sains dan Teknologi Peternakan, Universitas Brawijaya, Jl. Veteran, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145.</p>
+                            
+                            <hr class="my-4">
+                            
+                            <h5 class="fw-bold mb-3" style="color: var(--ub-navy);">Struktur Pengelola</h5>
+                            <div class="staff-list">
+                                <div class="staff-item">
+                                    <div class="staff-icon"><i class="bi bi-person-badge"></i></div>
+                                    <div>
+                                        <span class="text-muted small d-block">Ketua</span>
+                                        <strong class="text-dark">Dr. ABDUL MANAB, S.Pt., M.P.</strong>
+                                    </div>
+                                </div>
+                                <div class="staff-item">
+                                    <div class="staff-icon"><i class="bi bi-person-lines-fill"></i></div>
+                                    <div>
+                                        <span class="text-muted small d-block">Sekretaris</span>
+                                        <strong class="text-dark">Dr. FERI EKO HERMANTO, S.Si., M.Si.</strong>
+                                    </div>
+                                </div>
+                                <div class="staff-item">
+                                    <div class="staff-icon"><i class="bi bi-people-fill"></i></div>
+                                    <div>
+                                        <span class="text-muted small d-block">Admin</span>
+                                        <strong class="text-dark d-block">LUSVITA ANGGRAINI, S.Kom.</strong>
+                                        <strong class="text-dark d-block">VIKY BUDI HARIONO</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-ub py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-1 fw-semibold">&copy; 2026 Badan Pengelola Jurnal - Fakultas Sains dan Teknologi Peternakan (FAST) Universitas Brawijaya</p>
+            <small class="text-light opacity-75">Jl. Veteran, Malang 65145, Jawa Timur, Indonesia</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function cariJurnalHome(event) {
+            if (event) event.preventDefault();
+            const keyword = document.getElementById('inputCariHome').value.toLowerCase();
+            const items = document.querySelectorAll('.kartu-jurnal-item');
+            items.forEach(item => {
+                const teks = item.textContent.toLowerCase();
+                item.style.display = teks.includes(keyword) ? '' : 'none';
+            });
+            if (event && event.type === 'submit' && keyword.trim() !== '') {
+                document.getElementById('galeri').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
