@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurnal Index - BPJ FAST Universitas Brawijaya</title>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5.3.3 CSS & Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        :root {
+            --ub-navy: #003366;
+            --ub-navy-dark: #002244;
+            --ub-gold: #f59e0b;
+            --bg-light: #f4f7fa;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: #1e293b;
+        }
+
+        /* Navbar Styling */
+        .navbar-ub {
+            background: linear-gradient(135deg, var(--ub-navy) 0%, var(--ub-navy-dark) 100%);
+            box-shadow: 0 4px 20px rgba(0, 51, 102, 0.15);
+        }
+
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            transform: scale(1.15);
+            transform-origin: left center;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--ub-gold) !important;
+        }
+
+        /* Header Banner */
+        .page-header-card {
+            background: #ffffff;
+            border: none;
+            border-left: 6px solid var(--ub-gold);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+        }
+
+        .section-title {
+            color: var(--ub-navy);
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--ub-gold);
+            border-radius: 2px;
+        }
+
+        /* Journal Index Card */
+        .index-card {
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .index-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 26px rgba(0, 51, 102, 0.1);
+        }
+
+        .index-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .badge-indexer {
+            background-color: #f1f5f9;
+            color: var(--ub-navy);
+            border: 1px solid #cbd5e1;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-ub {
+            background-color: var(--ub-navy);
+            color: #ffffff;
+            border: none;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-ub:hover {
+            background-color: var(--ub-navy-dark);
+            color: var(--ub-gold);
+        }
+
+        /* Footer */
+        .footer-ub {
+            background-color: var(--ub-navy);
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-ub py-2">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="https://ternaktropika.ub.ac.id/public/site/images/viky/desain-tanpa-judul-2.png" alt="Logo Universitas Brawijaya" class="d-inline-block me-2">
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarUtama" aria-controls="navbarUtama" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarUtama">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profil.html">Profil BPJ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Daftar Jurnal
+                            </a>
+                            <ul class="dropdown-menu shadow border-0 rounded-3">
+                                <li><a class="dropdown-item py-2" href="https://jitek.ub.ac.id/index.php/jitek/index" target="_blank">Jurnal Ilmu dan Teknologi Hasil Ternak (JITEK)</a></li>
+                                <li><a class="dropdown-item py-2" href="https://jiip.ub.ac.id/index.php/jiip" target="_blank">Jurnal Ilmu-Ilmu Peternakan (JIIP)</a></li>
+                                <li><a class="dropdown-item py-2" href="https://jnt.ub.ac.id/index.php/jnt" target="_blank">Jurnal Nutrisi Ternak Tropis (JNTT)</a></li>
+                                <li><a class="dropdown-item py-2" href="https://ternaktropika.ub.ac.id/index.php/tropika" target="_blank">Jurnal TERNAK TROPIKA</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="jurnal-index.html">Jurnal Index</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="helpdesk.html">Helpdesk</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search" onsubmit="filterJurnal(event)">
+                        <div class="input-group">
+                            <input class="form-control border-0" id="inputCariIndex" type="search" placeholder="Cari jurnal atau pengindeks..." aria-label="Search" onkeyup="filterJurnal(event)">
+                            <button class="btn btn-warning fw-semibold px-3" type="submit">
+                                <i class="bi bi-search me-1"></i> Cari
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-4">
+        
+        <!-- HEADER HALAMAN -->
+        <section class="pt-2 mb-4">
+            <div class="page-header-card p-4 p-md-5">
+                <!-- <span class="badge bg-warning text-dark mb-2 px-3 py-1 fw-semibold">Akreditasi &amp; Pengindeks</span> -->
+                <h2 class="section-title mb-3">Jurnal Index</h2>
+                <p class="mb-0 text-secondary lh-lg">
+                    Daftar status akreditasi nasional serta lembaga pengindeks internasional untuk keempat berkala ilmiah di bawah naungan Badan Pengelola Jurnal Fakultas Sains dan Teknologi Peternakan (FAST) Universitas Brawijaya. Klik tombol <strong>Lihat Halaman Indexing</strong> untuk memeriksa daftar lengkap pengindeks pada portal OJS masing-masing jurnal.
+                </p>
+            </div>
+        </section>
+
+        <!-- DAFTAR KARTU INDEXING 4 JURNAL -->
+        <section id="daftar-index">
+            <div class="row row-cols-1 row-cols-md-2 g-4" id="containerKartuIndex">
+                
+                <!-- 1. JITEK -->
+                <div class="col item-jurnal" id="jitek">
+                    <div class="card h-100 index-card">
+                        <img src="https://ternaktropika.ub.ac.id/public/site/images/ttropika/4.png" class="index-card-img" alt="JITEK">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-primary-subtle text-primary fw-bold">JITEK</span>
+                                <span class="badge bg-success-subtle text-success"><i class="bi bi-patch-check-fill me-1"></i>Terakreditasi SINTA</span>
+                            </div>
+                            <h4 class="fw-bold mb-2" style="color: var(--ub-navy);">Jurnal Ilmu dan Teknologi Hasil Ternak</h4>
+                            <p class="text-muted small mb-3">
+                                Bidang kajian: Teknologi pengolahan susu, daging, telur, hasil ikutan ternak, mikrobiologi, serta bioteknologi hasil ternak.
+                            </p>
+                            
+                            <div class="mb-4">
+                                <span class="small fw-semibold text-dark d-block mb-2">Lembaga Pengindeks Utama:</span>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge-indexer"><i class="bi bi-award text-warning"></i> SINTA</span>
+                                    <span class="badge-indexer"><i class="bi bi-globe2 text-primary"></i> DOAJ</span>
+                                    <span class="badge-indexer"><i class="bi bi-journal-check text-success"></i> Garuda</span>
+                                    <span class="badge-indexer"><i class="bi bi-google text-danger"></i> Google Scholar</span>
+                                    <span class="badge-indexer"><i class="bi bi-link-45deg text-secondary"></i> Crossref (DOI)</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-auto d-flex flex-wrap gap-2">
+                                <a href="https://jitek.ub.ac.id/index.php/jitek/indexing" target="_blank" class="btn btn-ub flex-grow-1 py-2">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i> Lihat Halaman Indexing
+                                </a>
+                                <a href="https://jitek.ub.ac.id/index.php/jitek/index" target="_blank" class="btn btn-outline-secondary py-2 px-3">
+                                    Website OJS
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. JIIP -->
+                <div class="col item-jurnal" id="jiip">
+                    <div class="card h-100 index-card">
+                        <img src="https://ternaktropika.ub.ac.id/public/site/images/ttropika/5.png" class="index-card-img" alt="JIIP">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-primary-subtle text-primary fw-bold">JIIP</span>
+                                <span class="badge bg-success-subtle text-success"><i class="bi bi-patch-check-fill me-1"></i>Terakreditasi SINTA</span>
+                            </div>
+                            <h4 class="fw-bold mb-2" style="color: var(--ub-navy);">Jurnal Ilmu-Ilmu Peternakan</h4>
+                            <p class="text-muted small mb-3">
+                                Bidang kajian: Produksi ternak, pemuliaan dan genetika ternak, reproduksi, nutrisi, serta sosial ekonomi peternakan.
+                            </p>
+                            
+                            <div class="mb-4">
+                                <span class="small fw-semibold text-dark d-block mb-2">Lembaga Pengindeks Utama:</span>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge-indexer"><i class="bi bi-award text-warning"></i> SINTA</span>
+                                    <span class="badge-indexer"><i class="bi bi-globe2 text-primary"></i> DOAJ</span>
+                                    <span class="badge-indexer"><i class="bi bi-journal-check text-success"></i> Garuda</span>
+                                    <span class="badge-indexer"><i class="bi bi-google text-danger"></i> Google Scholar</span>
+                                    <span class="badge-indexer"><i class="bi bi-link-45deg text-secondary"></i> Crossref (DOI)</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-auto d-flex flex-wrap gap-2">
+                                <a href="https://jiip.ub.ac.id/index.php/jiip/jurnalindexing" target="_blank" class="btn btn-ub flex-grow-1 py-2">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i> Lihat Halaman Indexing
+                                </a>
+                                <a href="https://jiip.ub.ac.id/index.php/jiip" target="_blank" class="btn btn-outline-secondary py-2 px-3">
+                                    Website OJS
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. JNTT -->
+                <div class="col item-jurnal" id="jntt">
+                    <div class="card h-100 index-card">
+                        <img src="https://ternaktropika.ub.ac.id/public/site/images/ttropika/3.png" class="index-card-img" alt="JNTT">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-primary-subtle text-primary fw-bold">JNTT</span>
+                                <span class="badge bg-success-subtle text-success"><i class="bi bi-patch-check-fill me-1"></i>Terakreditasi SINTA</span>
+                            </div>
+                            <h4 class="fw-bold mb-2" style="color: var(--ub-navy);">Jurnal Nutrisi Ternak Tropis</h4>
+                            <p class="text-muted small mb-3">
+                                Bidang kajian: Ilmu bahan pakan lokal, formulasi ransum, teknologi pengolahan pakan, serta nutrisi ruminansia dan non-ruminansia.
+                            </p>
+                            
+                            <div class="mb-4">
+                                <span class="small fw-semibold text-dark d-block mb-2">Lembaga Pengindeks Utama:</span>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge-indexer"><i class="bi bi-award text-warning"></i> SINTA</span>
+                                    <span class="badge-indexer"><i class="bi bi-journal-check text-success"></i> Garuda</span>
+                                    <span class="badge-indexer"><i class="bi bi-google text-danger"></i> Google Scholar</span>
+                                    <span class="badge-indexer"><i class="bi bi-link-45deg text-secondary"></i> Crossref (DOI)</span>
+                                    <span class="badge-indexer"><i class="bi bi-database text-info"></i> Dimensions</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-auto d-flex flex-wrap gap-2">
+                                <a href="https://jnt.ub.ac.id/index.php/jnt/indexing" target="_blank" class="btn btn-ub flex-grow-1 py-2">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i> Lihat Halaman Indexing
+                                </a>
+                                <a href="https://jnt.ub.ac.id/index.php/jnt" target="_blank" class="btn btn-outline-secondary py-2 px-3">
+                                    Website OJS
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. TERNAK TROPIKA -->
+                <div class="col item-jurnal" id="ternak-tropika">
+                    <div class="card h-100 index-card">
+                        <img src="https://ternaktropika.ub.ac.id/public/site/images/ttropika/2.png" class="index-card-img" alt="TERNAK TROPIKA">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-primary-subtle text-primary fw-bold">TERNAK TROPIKA</span>
+                                <span class="badge bg-success-subtle text-success"><i class="bi bi-patch-check-fill me-1"></i>Terakreditasi SINTA</span>
+                            </div>
+                            <h4 class="fw-bold mb-2" style="color: var(--ub-navy);">Jurnal TERNAK TROPIKA</h4>
+                            <p class="text-muted small mb-3">
+                                Bidang kajian: Sistem budidaya peternakan tropis berkelanjutan, manajemen kesehatan, reproduksi, serta lingkungan ternak.
+                            </p>
+                            
+                            <div class="mb-4">
+                                <span class="small fw-semibold text-dark d-block mb-2">Lembaga Pengindeks Utama:</span>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge-indexer"><i class="bi bi-award text-warning"></i> SINTA</span>
+                                    <span class="badge-indexer"><i class="bi bi-globe2 text-primary"></i> DOAJ</span>
+                                    <span class="badge-indexer"><i class="bi bi-journal-check text-success"></i> Garuda</span>
+                                    <span class="badge-indexer"><i class="bi bi-google text-danger"></i> Google Scholar</span>
+                                    <span class="badge-indexer"><i class="bi bi-link-45deg text-secondary"></i> Crossref (DOI)</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-auto d-flex flex-wrap gap-2">
+                                <a href="https://ternaktropika.ub.ac.id/index.php/tropika/jurnalindexing" target="_blank" class="btn btn-ub flex-grow-1 py-2">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i> Lihat Halaman Indexing
+                                </a>
+                                <a href="https://ternaktropika.ub.ac.id/index.php/tropika" target="_blank" class="btn btn-outline-secondary py-2 px-3">
+                                    Website OJS
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-ub py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-1 fw-semibold">&copy; 2026 Badan Pengelola Jurnal - Fakultas Sains dan Teknologi Peternakan (FAST) Universitas Brawijaya</p>
+            <small class="text-light opacity-75">Jl. Veteran, Malang 65145, Jawa Timur, Indonesia</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function filterJurnal(event) {
+            if (event) event.preventDefault();
+            const keyword = document.getElementById('inputCariIndex').value.toLowerCase();
+            const cards = document.querySelectorAll('.item-jurnal');
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(keyword) ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
